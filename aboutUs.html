@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>关于我们</title>
+		<link rel="icon" href="img/cha.png" type="img/x-icon" />
+		<link type="text/css" rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="js/index.js"></script>
+	<style>
+	.ustwo{
+		width: 1300px;
+		height: 550px;
+		position: relative;
+	
+		background-color:#444444;
+			left:calc((100% - 1300px)/2);
+			top:30px;
+	}
+
+	</style>
+	</head>
+	<body>
+		<audio id="dayu"><source src="music/潘粤明-白天不懂夜的黑.mp3"></source> </audio>
+		
+		<div class="one-nav"> <img class="logo" src="img/lo.png"><img class="logo2" src="img/WENZI.png">
+          <a  href="index.html"     class="fonttwo" style=" text-decoration: none;  position: relative;
+				left: 170px;">
+           	首页
+           </a>
+           <a class="fontthree" href="myMusic.html" style="position: relative; text-decoration: none;
+				left: 220px;">
+           	我的音乐
+           </a>
+           <a class="fontone" style="position: relative;
+				left: 270px;">
+                    关于我们
+           </a>
+            <a class="fontfour" href="loginAndRegister.html" style="text-decoration: none;	">
+           	登录/注册
+           </a>
+           <div class="denglvbeijing"></div>
+          
+
+           </div>
+           <img  />
+        </div>
+		
+		<div class="ustwo" > 
+<div style="width: 800px;height: 800px;left:250px;position: absolute;top:60px">
+<p style="color:whitesmoke">&nbsp&nbsp这是由许自强独立完成的一个web端音乐播放器，主要使用了html css javascript等技术，用html搭建结构层，css搭样式层，javascript编写脚本实现具体功能。该音乐播放器主要围绕audio元素进行处理，对其各种自带的全局属性进行处理，将其与视图层进行连接，绑定功能，继而实现音乐播放器的音乐播放，暂停，下一首，上一首，音量控制，播放进度控制等功能。具体实现方法如下：<br>(1)音乐播放/暂停功能：通过将audio的play（）方法和pause（）方法与按钮进行绑定，监测鼠标点击事件，在两种状态下来回切换<br>(2)切换下一首/上一首功能：创建一个数组，将歌曲存储位置存为数组对象，为上一首/下一首按钮添加点击事件，当点击时从数组中获取下一个元素的内容，将其赋给audio的src属性，实现歌曲的切换；再通过获取数组元素用正则表达式对其进行分隔来获取歌手名歌曲名字符串，将字符串通过innerhtml传到歌曲歌手位置，从而实现歌手歌曲的同步变换。<br>......<br>微信扫一下这个二维码，了解更多 </p>
+
+<div style="right:0px;width:150px;height:150px;background-color:#ffffff;position: absolute"><img src="img/15963.jpg"> </div>
+		</div></div>
+		
+		
+		
+		
+		
+		<div class="three" style="left: calc((100% - 1440px)/2);">
+			<div class="jindu">
+				<p class="qian">00:00</p>
+				<p class="hou">00:00</p>
+				<div class="tiaodian">
+					<div class="guotiao"></div>
+				<div class="tiao"></div>
+				<div class="diann"></div>
+				<div class="guotiao"></div></div>
+			</div>
+			<img  class="zhuanjifengmian" src="img/59b0b66fb12b5_5201213_1504753263.jpg" />
+			
+				<a class="gequming">白天不懂夜的黑</a>
+				<a class="geshouming">潘粤明</a>
+			<div >	
+			<img class="play" index="0" src="img/a.png"/>
+			<img class="play play2" index="1"  src="img/45.png" /></div>
+			<img class="xiayishou" src="img/xiayishou.png">
+			<img class="shangyishou" src="img/shangyishou.png">
+			<div class="yinliang"><img src="img/mn.png"></div>
+			<div><img   class="xihuan" index="0" src="img/形状 1 拷贝.png">
+			<img   class="xihuan xihuan1"  index="1"  src="img/412.png">
+			</div>
+			<div class="ylt">  
+			<div class="bar"></div>
+			<div class="box"></div>
+			<p class="ylz">&nbsp;100 </p>
+			
+			</div>
+
+
+		</div>
+		</div>
+	<script type="text/javascript">
+		var dayu=document.getElementById("dayu")
+	var tiao=document.getElementsByClassName("tiao")[0]
+var dian=document.getElementsByClassName("diann")[0]
+var guotiao=document.getElementsByClassName("guotiao")[0]
+var chaz=tiao.offsetWidth - dian.offsetWidth
+var guotiao=document.getElementsByClassName("guotiao")[0]
+var hou=document.getElementsByClassName("hou")[0]
+var qian=document.getElementsByClassName("qian")[0]
+var xh=document.getElementsByClassName("xihuan")
+var kuai=document.getElementsByClassName("kuai")
+var iconfc=document.getElementsByClassName("iconfc")
+var musiclist=["music/潘粤明-白天不懂夜的黑.mp3","music/双笙-大鱼.mp3","music/哦漏-月牙湾.mp3","music/周深-大鱼.mp3"]
+var icoc=0;
+var gequming=document.getElementsByClassName("gequming")[0]
+var geshouming=document.getElementsByClassName("geshouming")[0]
+var xiayishou=document.getElementsByClassName("xiayishou")[0]
+var shangyishou=document.getElementsByClassName("shangyishou")[0]
+dayu.src=musiclist[icoc];
+	
+
+
+function	bofangxiayishou() {//播放下一首歌曲的方法
+	if(icoc<3){
+	dayu.src=musiclist[icoc+1];
+  var starg=musiclist[icoc+1].indexOf('-');
+	var endg = musiclist[icoc+1].indexOf('.',starg+1);
+	var star=musiclist[icoc+1].indexOf('/');
+	var end = musiclist[icoc+1].indexOf('-',star+1);
+	var listt=musiclist[icoc+1].substring(starg+1,endg);
+	var listtt=musiclist[icoc+1].substring(star+1,end);
+	geshouming.innerHTML=listtt;
+	gequming.innerHTML=	listt;
+	icoc=icoc+1;}
+else if(icoc==3){
+	icoc=0;
+	dayu.src=musiclist[0];
+  var starg=musiclist[0].indexOf('-');
+	var endg = musiclist[0].indexOf('.',starg+1);
+	var star=musiclist[0].indexOf('/');
+	var end = musiclist[0].indexOf('-',star+1);
+	var listt=musiclist[0].substring(starg+1,endg);
+	var listtt=musiclist[0].substring(star+1,end);
+	geshouming.innerHTML=listtt;
+	gequming.innerHTML=	listt;
+	icoc=0;
+}
+
+}
+function	bofangshangyishou() {//播放上一首歌曲的方法
+	if(icoc!==0){
+	dayu.src=musiclist[icoc-1];
+  var starg=musiclist[icoc-1].indexOf('-');
+	var endg = musiclist[icoc-1].indexOf('.',starg+1);
+	var star=musiclist[icoc-1].indexOf('/');
+	var end = musiclist[icoc-1].indexOf('-',star+1);
+	var listt=musiclist[icoc-1].substring(starg+1,endg);
+	var listtt=musiclist[icoc-1].substring(star+1,end);
+	geshouming.innerHTML=listtt;
+	gequming.innerHTML=	listt;
+	icoc=icoc-1;}
+else if(icoc==0){
+	icoc=3;
+	dayu.src=musiclist[0];
+  var starg=musiclist[0].indexOf('-');
+	var endg = musiclist[0].indexOf('.',starg+1);
+	var star=musiclist[0].indexOf('/');
+	var end = musiclist[0].indexOf('-',star+1);
+	var listt=musiclist[0].substring(starg+1,endg);
+	var listtt=musiclist[0].substring(star+1,end);
+	geshouming.innerHTML=listtt;
+	gequming.innerHTML=	listt;
+	icoc=3;
+}
+
+}
+
+	
+dian.onmousedown=function(ev){
+				let dianL=dian.offsetLeft
+				let e=ev || window.event
+				let mouseX=e.clientX
+				window.onmousemove=function(ev){
+					let e=ev || window.event
+				let moveL=e.clientX - mouseX
+				let newL=dianL+moveL
+				if(newL < 0){
+					newL=0
+				}
+				if(newL >=chaz){
+					newL=chaz
+					
+					
+				}
+				dian.style.left=newL+'px'
+				let biu=newL / chaz * dayu.duration
+				cascv=Math.ceil(biu)
+				dayu.currentTime=cascv
+				return false	
+			}
+			window.onmouseup=function(){
+				window.onmousemove=false
+				return false
+			}
+			return false
+		}
+var jjjk=function(){
+            var fen=0
+            var fem=0
+            var _fem='00'
+             var _fen='00'
+           fem=Math.floor(dayu.duration / 60)
+             fen=Math.floor(dayu.duration % 60)
+             _fem=fem < 10 ? '0' + fem : fem + ''
+            _fen=fen < 10 ? '0' + fen : fen + ''
+            
+            
+             var fev=0
+              var feb=0
+             var _fev='00'
+             var _feb='00'
+             fev=Math.floor(dayu.currentTime / 60)
+             feb=Math.floor(dayu.currentTime % 60)
+             _fev=fev < 10 ? '0' + fev : fev + ''
+             _feb=feb < 10 ? '0' + feb : feb + ''
+           
+           hou.innerHTML= _fem + ":" + _fen
+          qian.innerHTML= _fev + ":" + _feb
+     
+				dian.style.left=dayu.currentTime / dayu.duration * chaz + "px"
+				guotiao.style.width=dayu.currentTime / dayu.duration * chaz + "px"
+		}
+				
+
+var clearss=function(){
+for(var j=0;j<kuai.length;j++){
+	
+	kuai[j].className="kuai"
+}
+
+}
+for(var i=0;i<kuai.length;i++){
+	iconfc[i].addEventListener("click",function(){
+		x=this.getAttribute("index")
+		clearss()
+		kuai[x].className="kuai kuai1"
+		
+		
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+for(var v=0;v<xh.length;v++){
+	xh[v].addEventListener("click",function(){
+		x=this.getAttribute("index")
+		xha()
+		xh[x].className="xihuan xihuan1"
+		
+		
+	})
+}
+
+
+
+
+        var int=self.setInterval("jjjk()",50)
+        xiayishou.addEventListener("click",bofangxiayishou)
+  shangyishou.addEventListener("click",bofangshangyishou)
+	</script>
+		
+	</body>
+</html>
