@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>我的音乐</title>
+		<link rel="icon" href="img/cha.png" type="img/x-icon" />
+		<link type="text/css" rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+	<body>
+		<audio id="dayu"><source src="music/潘粤明-白天不懂夜的黑.mp3"></source> </audio>
+		
+		<div class="one-nav"> <img class="logo" src="img/lo.png"><img class="logo2" src="img/WENZI.png">
+          <a  href="index.html"     class="fonttwo" style=" text-decoration: none;  position: relative;
+				left: 170px;">
+           	首页
+           </a>
+           <a class="fontone" style="position: relative;
+				left: 220px;">
+           	我的音乐
+           </a>
+           <a class="fontthree" style="position: relative;
+				left: 270px;">
+                    关于我们
+           </a>
+            <a class="fontfour" href="loginAndRegister.html" style="text-decoration: none;	">
+           	登录/注册
+           </a>
+           <div class="denglvbeijing"></div>
+          
+
+           </div>
+           <img  />
+        </div>
+		
+		
+		
+		
+		
+		
+		
+		<div class="three" style="left: calc((100% - 1440px)/2);">
+			<div class="jindu">
+				<p class="qian">00:00</p>
+				<p class="hou">00:00</p>
+				<div class="tiaodian">
+					<div class="guotiao"></div>
+				<div class="tiao"></div>
+				<div class="diann"></div>
+				<div class="guotiao"></div></div>
+			</div>
+			<img  class="zhuanjifengmian" src="img/59b0b66fb12b5_5201213_1504753263.jpg" />
+			
+				<a class="gequming">白天不懂夜的黑</a>
+				<a class="geshouming">潘粤明</a>
+			<div >	
+			<img class="play" index="0" src="img/a.png"/>
+			<img class="play play2" index="1"  src="img/45.png" /></div>
+			<img class="xiayishou" src="img/xiayishou.png">
+			<img class="shangyishou" src="img/shangyishou.png">
+			<div class="yinliang"><img src="img/mn.png"></div>
+			<div><img   class="xihuan" index="0" src="img/形状 1 拷贝.png">
+			<img   class="xihuan xihuan1"  index="1"  src="img/412.png">
+			</div>
+			<div class="ylt">  
+			<div class="bar"></div>
+			<div class="box"></div>
+			<p class="ylz">&nbsp;100 </p>
+			
+			</div>
+
+
+		</div>
+		</div>
+	<script type="text/javascript">
+		var dayu=document.getElementById("dayu")
+	var tiao=document.getElementsByClassName("tiao")[0]
+var dian=document.getElementsByClassName("diann")[0]
+var guotiao=document.getElementsByClassName("guotiao")[0]
+var chaz=tiao.offsetWidth - dian.offsetWidth
+var guotiao=document.getElementsByClassName("guotiao")[0]
+var hou=document.getElementsByClassName("hou")[0]
+var qian=document.getElementsByClassName("qian")[0]
+var xh=document.getElementsByClassName("xihuan")
+var kuai=document.getElementsByClassName("kuai")
+var iconfc=document.getElementsByClassName("iconfc")
+	
+	
+	
+dian.onmousedown=function(ev){
+				let dianL=dian.offsetLeft
+				let e=ev || window.event
+				let mouseX=e.clientX
+				window.onmousemove=function(ev){
+					let e=ev || window.event
+				let moveL=e.clientX - mouseX
+				let newL=dianL+moveL
+				if(newL < 0){
+					newL=0
+				}
+				if(newL >=chaz){
+					newL=chaz
+					
+					
+				}
+				dian.style.left=newL+'px'
+				let biu=newL / chaz * dayu.duration
+				cascv=Math.ceil(biu)
+				dayu.currentTime=cascv
+				return false	
+			}
+			window.onmouseup=function(){
+				window.onmousemove=false
+				return false
+			}
+			return false
+		}
+var jjjk=function(){
+            var fen=0
+            var fem=0
+            var _fem='00'
+             var _fen='00'
+           fem=Math.floor(dayu.duration / 60)
+             fen=Math.floor(dayu.duration % 60)
+             _fem=fem < 10 ? '0' + fem : fem + ''
+            _fen=fen < 10 ? '0' + fen : fen + ''
+            
+            
+             var fev=0
+              var feb=0
+             var _fev='00'
+             var _feb='00'
+             fev=Math.floor(dayu.currentTime / 60)
+             feb=Math.floor(dayu.currentTime % 60)
+             _fev=fev < 10 ? '0' + fev : fev + ''
+             _feb=feb < 10 ? '0' + feb : feb + ''
+           
+           hou.innerHTML= _fem + ":" + _fen
+          qian.innerHTML= _fev + ":" + _feb
+     
+				dian.style.left=dayu.currentTime / dayu.duration * chaz + "px"
+				guotiao.style.width=dayu.currentTime / dayu.duration * chaz + "px"
+		}
+				
+
+var clearss=function(){
+for(var j=0;j<kuai.length;j++){
+	
+	kuai[j].className="kuai"
+}
+
+}
+for(var i=0;i<kuai.length;i++){
+	iconfc[i].addEventListener("click",function(){
+		x=this.getAttribute("index")
+		clearss()
+		kuai[x].className="kuai kuai1"
+		
+		
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+for(var v=0;v<xh.length;v++){
+	xh[v].addEventListener("click",function(){
+		x=this.getAttribute("index")
+		xha()
+		xh[x].className="xihuan xihuan1"
+		
+		
+	})
+}
+
+
+
+
+		var int=self.setInterval("jjjk()",50)
+	</script>
+		
+	</body>
+</html>

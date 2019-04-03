@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录/注册</title>
+		<link rel="icon" href="img/cha.png" type="img/x-icon" />
+		<link rel="stylesheet" href="css/loginAndRegister.css" />
+	</head>
+	<body>
+		<div class="zuidade">
+			<div class="dierda">
+				<img src="img/WENZI.png" class="logooo" />
+				<img src="img/lo.png" class="liuo" />
+				<div id="denglu" class="wenzi" style="position: relative;
+			left: 60px;
+			top: 110px;">登录</div><span class="wenzi1" style="	position: relative;
+			left: 70px;
+			top: 110px;">/</span>
+				<div id="zhuce"  class="wenzi2" style="position: relative;
+			left: 80px;
+			top: 110px;">注册</div>
+				<div class="disanda">
+					
+					<div class="yonghuu" ></div>
+					<input class="yonghu"  type="text" pattern="^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$" placeholder="请输入手机号" >
+					
+					</input><div class="zhengque"></div>
+					<div class="cuowu"></div>
+					<div class="mima12"></div>
+					<input class="mima1" type="password"   value=""   placeholder="请输入密码" >
+						
+					</input>
+					
+					<div class="wangjimima">忘记密码？</div>
+					<div class="dengluanniu"><span class="deng">登 &nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp录</span></div>
+					
+				</div>
+				<div class="disanda2">
+										<input class="yonghu"  type="text"  placeholder="&nbsp &nbsp  请输入手机号" >
+					
+					</input><div class="zhengque"></div>
+					<div class="cuowu"></div>
+						<div class="cuowu2"></div>
+					<input class="shoujihao"  type="text"  placeholder="&nbsp &nbsp  请输入用户名" >
+					
+					</input>
+					<input class="mima12" type="password"   value=""   placeholder="&nbsp &nbsp 请输入密码" >
+						
+					</input>
+					<div class="mima"></div>
+					
+					<div class="zhuceanniu"><span class="deng">注 &nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp册</span></div>
+					
+				</div>
+				
+			</div>
+		</div>
+		
+		<script >
+			var a=document.getElementById("denglu")
+			var b=document.getElementById("zhuce")
+			var c=document.getElementsByClassName("disanda")[0]
+			var d=document.getElementsByClassName('disanda2')[0]
+			var e=document.getElementsByClassName("liuo")[0]
+			var f=document.getElementsByClassName("dengluanniu")[0]
+			var bb=function(){
+				a.className="wenzi2"
+				b.className="wenzi"
+				c.setAttribute("style","z-index: 0");
+				d.setAttribute("style","z-index: 1");
+			}
+			var aa=function(){
+				a.className="wenzi"
+				b.className="wenzi2"
+				c.setAttribute("style","z-index: 1");
+				d.setAttribute("style","z-index: 0");
+			}
+			var cc=function(){
+				window.location.href="index.html"
+			}
+			
+			a.addEventListener("click",aa)
+			b.addEventListener("click",bb)
+			e.addEventListener("click",cc)
+			f.addEventListener("click",cc)
+			
+		</script>
+		
+	</body>
+</html>
